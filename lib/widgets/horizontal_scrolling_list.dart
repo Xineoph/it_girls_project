@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../models/books _model.dart';
 import '../screens/book_screen.dart';
 
 class HorizontalList extends StatelessWidget {
