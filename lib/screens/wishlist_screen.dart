@@ -1,21 +1,29 @@
+import 'package:bookshop/widgets/wishlist_component.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-List<BookInfo> _books = [
-  BookInfo('assets/images/bookWish1.png', 160.46),
-  BookInfo('assets/images/bookWish2.png', 157.82),
-  BookInfo('assets/images/bookWish3.png', 138.67),
-  BookInfo('assets/images/bookWish4.png', 160.91),
-  BookInfo('assets/images/bookWish5.png', 150.9),
-  BookInfo('assets/images/bookWish6.png', 157.32),
-  BookInfo('assets/images/bookWish7.png', 160.46),
-  BookInfo('assets/images/bookWish8.png', 160.46),
-  BookInfo('assets/images/bookWish9.png', 160.46),
-  BookInfo('assets/images/bookWish10.png', 160.46),
-  BookInfo('assets/images/bookWish11.png', 160.46),
-  BookInfo('assets/images/bookWish1.png', 160.46),
-  BookInfo('assets/images/bookWish2.png', 157.82),
-  BookInfo('assets/images/bookWish3.png', 138.67),
-  BookInfo('assets/images/bookWish4.png', 160.91),
+List<WishListItem> _books = [
+  WishListItem(url: 'assets/images/bookWish1.png', height: 160.46),
+  WishListItem(url: 'assets/images/bookWish2.png', height: 157.82),
+  WishListItem(url: 'assets/images/bookWish3.png', height: 138.67),
+  WishListItem(url: 'assets/images/bookWish4.png', height: 160.91),
+  WishListItem(url: 'assets/images/bookWish5.png', height: 150.9),
+  WishListItem(url: 'assets/images/bookWish6.png', height: 157.32),
+  WishListItem(url: 'assets/images/bookWish7.png', height: 160.46),
+  WishListItem(url: 'assets/images/bookWish8.png', height: 160.46),
+  WishListItem(url: 'assets/images/bookWish9.png', height: 160.46),
+  WishListItem(url: 'assets/images/bookWish10.png', height: 160.46),
+  WishListItem(url: 'assets/images/bookWish11.png', height: 160.46),
+  WishListItem(url: 'assets/images/bookWish1.png', height: 160.46),
+  WishListItem(url: 'assets/images/bookWish2.png', height: 157.82),
+  WishListItem(url: 'assets/images/bookWish3.png', height: 138.67),
+  WishListItem(url: 'assets/images/bookWish4.png', height: 160.91),
+  WishListItem(url: 'assets/images/bookWish11.png', height: 160.46),
+  WishListItem(url: 'assets/images/bookWish1.png', height: 160.46),
+  WishListItem(url: 'assets/images/bookWish2.png', height: 157.82),
+  WishListItem(url: 'assets/images/bookWish3.png', height: 138.67),
+  WishListItem(url: 'assets/images/bookWish4.png', height: 160.91),
+  WishListItem(url: 'assets/images/bookWish10.png', height: 160.46),
 ];
 
 class WishListScreen extends StatefulWidget {
@@ -26,17 +34,15 @@ class WishListScreen extends StatefulWidget {
 }
 
 class _WishListScreenState extends State<WishListScreen> {
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: _titleRow(),
       ),
       body: _VerticalScrollingList(),
-    ));
+    );
   }
 
   Row _titleRow() {
@@ -64,62 +70,30 @@ class _WishListScreenState extends State<WishListScreen> {
   }
 }
 
-class _VerticalScrollingList extends StatelessWidget {
+class _VerticalScrollingList extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    if (_books.isEmpty) {
-      return const Text('no data');
-    }
-    int n = _books.length ~/ 3;
-
-    return SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Container(
-            padding: const EdgeInsets.all(10),
-            margin: const EdgeInsets.all(15),
-            child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  _BooksColumn(0, n),
-                  _BooksColumn(n, 2 * n),
-                  _BooksColumn(2 * n, _books.length),
-                ])));
-  }
+  State<_VerticalScrollingList> createState() => _VerticalScrollingListState();
 }
 
-class _BooksColumn extends StatelessWidget {
-  final int _start;
-  final int _end;
-
-  const _BooksColumn(this._start, this._end);
-
+class _VerticalScrollingListState extends State<_VerticalScrollingList> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        for (int i = _start; i < _end; i++)
-          Container(
-              padding: const EdgeInsets.only(bottom: 8),
-              height: _books[i].height,
-              width: _books[i].width,
-              child: Image.asset(
-                _books[i].url,
-                fit: BoxFit.fill,
-              ))
-      ],
+    return MasonryGridView.count(
+      itemCount: _books.length,
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+      crossAxisCount: 3,
+      mainAxisSpacing: 1,
+      crossAxisSpacing: 1,
+      itemBuilder: (context, i) {
+        return Card(
+          child: SizedBox(
+            height: _books[i].height,
+            child: Center(
+              child: Image.asset(_books[i].url),
+            ),
+          ),
+        );
+      },
     );
   }
-}
-
-class BookInfo {
-  String url;
-  double height;
-  double width = 104.0;
-
-  BookInfo(this.url, this.height);
 }
