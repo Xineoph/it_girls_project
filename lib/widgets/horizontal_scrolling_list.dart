@@ -1,7 +1,7 @@
+import 'package:bookshop/models/books%20_model.dart';
+import 'package:bookshop/widgets/book_details.dart';
 import 'package:flutter/material.dart';
 
-import '../models/books _model.dart';
-import '../screens/book_screen.dart';
 
 class HorizontalList extends StatelessWidget {
   const HorizontalList({Key? key}) : super(key: key);
