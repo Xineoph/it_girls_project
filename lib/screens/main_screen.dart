@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'user_profile_screen.dart';
+
+
 class MainScreen extends StatefulWidget {
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -8,8 +11,8 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(),
+    return const Scaffold(
+      body: Wish(),
     );
   }
 }

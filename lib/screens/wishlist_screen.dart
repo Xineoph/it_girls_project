@@ -2,7 +2,7 @@ import 'package:bookshop/widgets/wishlist_component.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-List<WishListItem> _books = [
+List<WishListItem> books = [
   WishListItem(url: 'assets/images/bookWish1.png', height: 160.46),
   WishListItem(url: 'assets/images/bookWish2.png', height: 157.82),
   WishListItem(url: 'assets/images/bookWish3.png', height: 138.67),
@@ -59,7 +59,7 @@ class _WishListScreenState extends State<WishListScreen> {
           ),
         ),
         Text(
-          '   ${_books.length}',
+          '   ${books.length}',
           style: const TextStyle(
             fontSize: 15,
             color: Colors.black,
@@ -79,7 +79,7 @@ class _VerticalScrollingListState extends State<_VerticalScrollingList> {
   @override
   Widget build(BuildContext context) {
     return MasonryGridView.count(
-      itemCount: _books.length,
+      itemCount: books.length,
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       crossAxisCount: 3,
       mainAxisSpacing: 1,
@@ -87,9 +87,9 @@ class _VerticalScrollingListState extends State<_VerticalScrollingList> {
       itemBuilder: (context, i) {
         return Card(
           child: SizedBox(
-            height: _books[i].height,
+            height: books[i].height,
             child: Center(
-              child: Image.asset(_books[i].url),
+              child: Image.asset(books[i].url),
             ),
           ),
         );
