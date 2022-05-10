@@ -1,5 +1,5 @@
+import 'package:bookshop/screens/main_screen.dart';
 import 'package:flutter/material.dart';
-import 'screens/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,14 +7,15 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainScreen(),
+      home:  MainScreen(),
     );
   }
 }
+
+
