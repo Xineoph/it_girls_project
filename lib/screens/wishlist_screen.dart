@@ -38,6 +38,9 @@ class _WishListScreenState extends State<WishListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+        color: Colors.black,
+        ),
         backgroundColor: Colors.white,
         title: _titleRow(),
       ),
@@ -55,7 +58,9 @@ class _WishListScreenState extends State<WishListScreen> {
           'Wishlist',
           style: TextStyle(
             fontSize: 20,
+            fontFamily: 'Montserrat',
             color: Colors.black,
+            fontWeight: FontWeight.bold,
           ),
         ),
         Text(

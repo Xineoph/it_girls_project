@@ -1,21 +1,14 @@
+import 'package:bookshop/screens/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'wishlist_screen.dart';
+class WishListInProfile extends StatelessWidget {
+  const WishListInProfile({Key? key}) : super(key: key);
 
-class Wish extends StatefulWidget {
-  const Wish({Key? key}) : super(key: key);
-
-  @override
-  State<Wish> createState() => _WishState();
-}
-
-class _WishState extends State<Wish> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        //title: _titleRow(),
       ),
       body: Column(
         children: const <Widget>[
@@ -50,7 +43,8 @@ class _RowTitleState extends State<RowTitle> {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
-                color: Colors.grey,
+                fontFamily: 'Montserrat',
+                color: Colors.black,
               ),
             ),
             Text(
@@ -106,18 +100,35 @@ class InkWellWishScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
-      child: const InkWell(
-          child: Text(
-        'View all WishList Books>',
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 20,
-          color: Colors.blueGrey,
+    return InkWell(
+      child: Container(
+        alignment: Alignment.center,
+        padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
+        child: Container(
+          padding: const EdgeInsets.only(
+            bottom: 1,
+          ),
+          decoration: const BoxDecoration(
+              border: Border(
+                  bottom: BorderSide(
+            color: Color(0xffd96f6e),
+            width: 2.0,
+          ))),
+          child: const Text(
+            'View all WishList Books  >',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+              fontFamily: 'Montserrat',
+              color: Color(0xffd96f6e),
+            ),
+          ),
         ),
-      )),
+      ),
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const WishListScreen()));
+      },
     );
   }
 }
