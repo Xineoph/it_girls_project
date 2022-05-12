@@ -1,6 +1,7 @@
 import 'package:bookshop/helpers/colors.dart';
 import 'package:bookshop/models/genres_model.dart';
-import 'package:bookshop/screens/genres_null.dart';
+import 'package:bookshop/screens/null_screen.dart';
+
 import 'package:flutter/material.dart';
 
 class GenresList extends StatelessWidget {
@@ -40,8 +41,7 @@ class GenresList extends StatelessWidget {
           Genres genres = genresList[index];
           return InkWell(
             onTap: (() {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const GenresNull()));
+              Navigator.of(context).pushNamed('/null');
             }),
             child: Column(
               children: [
