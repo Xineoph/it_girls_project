@@ -2,7 +2,6 @@ import 'package:bookshop/models/books%20_model.dart';
 import 'package:bookshop/widgets/book_details.dart';
 import 'package:flutter/material.dart';
 
-
 class BookPage extends StatelessWidget {
   const BookPage({Key? key}) : super(key: key);
 
@@ -29,7 +28,7 @@ class BookPage extends StatelessWidget {
                   ),
                   Image.asset(
                     books.image,
-                    height: 160,
+                    height: 155,
                     fit: BoxFit.fitHeight,
                   ),
                   Text(
@@ -43,5 +42,3 @@ class BookPage extends StatelessWidget {
         });
   }
 }
-
-

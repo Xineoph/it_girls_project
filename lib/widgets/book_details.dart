@@ -1,5 +1,6 @@
 import 'package:bookshop/helpers/colors.dart';
 import 'package:bookshop/models/books%20_model.dart';
+
 import 'package:bookshop/widgets/horizontal_scrolling_list.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
@@ -83,6 +84,7 @@ class BooksDetails extends StatelessWidget {
   Widget _buildBookAutor() {
     return Text(
       books.autor,
+      //style: Theme.of(context).textTheme.headline1,
       style: const TextStyle(
         fontSize: 16,
         fontFamily: 'Montserrat',
