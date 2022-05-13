@@ -82,7 +82,7 @@ class BooksDetails extends StatelessWidget {
 
   Widget _buildBookAutor() {
     return Text(
-      books.autor,
+      books.author,
       style: const TextStyle(
         fontSize: 16,
         fontFamily: 'Montserrat',
