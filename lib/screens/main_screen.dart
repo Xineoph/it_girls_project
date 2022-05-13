@@ -12,7 +12,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int selectedIndex = 0;
   final List<Widget> screens = [
-    const Text('Home'),
+    const Text('Home Page'),
     const BookPage(),
     const WishListScreen(),
     const Text('Profile'),

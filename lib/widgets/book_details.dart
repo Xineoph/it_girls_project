@@ -1,5 +1,7 @@
 import 'package:bookshop/helpers/colors.dart';
 import 'package:bookshop/models/books%20_model.dart';
+import 'package:bookshop/screens/wishlist_screen.dart';
+
 import 'package:bookshop/widgets/horizontal_scrolling_list.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
@@ -22,34 +24,35 @@ class BooksDetails extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: SingleChildScrollView(
-            child: Column(
-          children: [
-            _buildBookImage(),
-            _buildSpacer(),
-            _buildBookName(),
-            _buildSpacer(),
-            _buildBookAutor(),
-            _buildSpacer(),
-            _buildBookInfo(),
-            _buildSpacer(),
-            _buildBookPrice(),
-            _buildSpacer(),
-            _buildBookDescription(),
-            _buildSpacer(),
-            _buildButtonCart(),
-            _buildSpacer(),
-            _buildButtoWishList(),
-            _buildSpacer(),
-            _buildPublisher(),
-            _buildSpacer(),
-            _buildTextGenres(),
-            _buildButtonGenres(),
-            _buildTextShare(),
-            _buildRowShare(),
-            _buildTextPublications(),
-            const HorizontalList(),
-          ],
-        )),
+          child: Column(
+            children: [
+              _buildBookImage(),
+              _buildSpacer(),
+              _buildBookName(),
+              _buildSpacer(),
+              _buildBookAutor(),
+              _buildSpacer(),
+              _buildBookInfo(),
+              _buildSpacer(),
+              _buildBookPrice(),
+              _buildSpacer(),
+              _buildBookDescription(),
+              _buildSpacer(),
+              _buildButtonCart(),
+              _buildSpacer(),
+              _buildButtoWishList(context),
+              _buildSpacer(),
+              _buildPublisher(),
+              _buildSpacer(),
+              _buildTextGenres(),
+              _buildButtonGenres(context),
+              _buildTextShare(),
+              _buildRowShare(),
+              _buildTextPublications(),
+              const HorizontalList(),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -141,7 +144,7 @@ class BooksDetails extends StatelessWidget {
     );
   }
 
-  Widget _buildButtoWishList() {
+  Widget _buildButtoWishList(context) {
     return TextButton(
       style: ButtonStyle(
           backgroundColor:
@@ -149,7 +152,9 @@ class BooksDetails extends StatelessWidget {
           shape: MaterialStateProperty.all(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
           minimumSize: MaterialStateProperty.all(const Size(296.0, 40.0))),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.of(context).pushNamed('/wishlist');
+      },
       child: const Text(
         'WISHLIST',
         style: TextStyle(
@@ -187,7 +192,7 @@ class BooksDetails extends StatelessWidget {
     );
   }
 
-  Widget _buildButtonGenres() {
+  Widget _buildButtonGenres(context) {
     return Padding(
       padding: const EdgeInsets.all(5),
       child: Row(
@@ -195,16 +200,15 @@ class BooksDetails extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed('/null');
+            },
             child: Ink(
               padding: const EdgeInsets.all(7),
               width: 130,
               height: 30,
               decoration: BoxDecoration(
-                  gradient: const LinearGradient(colors: [
-                    CustomColors.yellowColor,
-                    CustomColors.softPinkColor,
-                  ]),
+                  gradient: CustomColors.gradientYellowPink,
                   borderRadius: BorderRadius.circular(10)),
               child: const Text(
                 'Contemporary',
@@ -218,18 +222,15 @@ class BooksDetails extends StatelessWidget {
             ),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed('/null');
+            },
             child: Ink(
               padding: const EdgeInsets.all(7),
               width: 130,
               height: 30,
               decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [
-                      Color(0xFF53889D),
-                      Color(0xFFBBD1D9),
-                    ],
-                  ),
+                  gradient: CustomColors.gradientBlueBaby,
                   borderRadius: BorderRadius.circular(10)),
               child: Text(
                 books.genres,
