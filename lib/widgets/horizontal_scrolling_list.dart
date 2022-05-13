@@ -2,7 +2,6 @@ import 'package:bookshop/models/books%20_model.dart';
 import 'package:bookshop/widgets/book_details.dart';
 import 'package:flutter/material.dart';
 
-
 class HorizontalList extends StatelessWidget {
   const HorizontalList({Key? key}) : super(key: key);
   @override
@@ -21,7 +20,7 @@ class HorizontalList extends StatelessWidget {
               itemCount: booksList.length,
               separatorBuilder: (context, index) => const SizedBox(width: 5),
               itemBuilder: (context, index) {
-                Books books = booksList[index];
+                Books _books = booksList[index];
                 return SizedBox(
                   width: 120,
                   child: InkWell(
@@ -29,7 +28,7 @@ class HorizontalList extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => BooksDetails(books)));
+                              builder: (context) => BooksDetails(_books)));
                     }),
                     child: Column(
                       children: [
@@ -39,7 +38,7 @@ class HorizontalList extends StatelessWidget {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(1),
                               child: Image.asset(
-                                books.image,
+                                _books.image,
                                 fit: BoxFit.fitHeight,
                               ),
                             ),
@@ -49,12 +48,12 @@ class HorizontalList extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          books.name,
+                          _books.name,
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                               fontSize: 14, fontWeight: FontWeight.bold),
                         ),
-                        Text(books.price),
+                        Text(_books.price),
                       ],
                     ),
                   ),

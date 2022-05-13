@@ -1,15 +1,13 @@
 import 'package:bookshop/helpers/colors.dart';
 import 'package:bookshop/models/books%20_model.dart';
-import 'package:bookshop/screens/wishlist_screen.dart';
-
 import 'package:bookshop/widgets/horizontal_scrolling_list.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
 
 class BooksDetails extends StatelessWidget {
-  final Books books;
+  final Books _books;
 
-  const BooksDetails(this.books, {Key? key}) : super(key: key);
+  BooksDetails(this._books, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +64,7 @@ class BooksDetails extends StatelessWidget {
   Widget _buildBookImage() {
     return Center(
       child: Image.asset(
-        books.image,
+        _books.image,
         width: 143,
         height: 216,
       ),
@@ -75,7 +73,7 @@ class BooksDetails extends StatelessWidget {
 
   Widget _buildBookName() {
     return Text(
-      books.name,
+      _books.name,
       style: const TextStyle(
           fontSize: 25,
           fontFamily: 'PlayfairDisplay',
@@ -85,7 +83,7 @@ class BooksDetails extends StatelessWidget {
 
   Widget _buildBookAutor() {
     return Text(
-      books.autor,
+      _books.autor,
       style: const TextStyle(
         fontSize: 16,
         fontFamily: 'Montserrat',
@@ -106,7 +104,7 @@ class BooksDetails extends StatelessWidget {
 
   Widget _buildBookPrice() {
     return Text(
-      books.price,
+      _books.price,
       style: const TextStyle(
           fontSize: 25,
           fontFamily: 'PlayfairDisplay',
@@ -116,7 +114,7 @@ class BooksDetails extends StatelessWidget {
 
   Widget _buildBookDescription() {
     return Text(
-      books.description,
+      _books.description,
       textAlign: TextAlign.center,
       style: const TextStyle(
         fontSize: 16,
@@ -233,7 +231,7 @@ class BooksDetails extends StatelessWidget {
                   gradient: CustomColors.gradientBlueBaby,
                   borderRadius: BorderRadius.circular(10)),
               child: Text(
-                books.genres,
+                _books.genres,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                     fontSize: 12,
@@ -269,7 +267,7 @@ class BooksDetails extends StatelessWidget {
             backgroundColor: CustomColors.blueColor,
             heroTag: null,
             onPressed: () {
-              Share.share(books.name);
+              Share.share(_books.name);
             },
             child: Image.asset(
               'assets/images/icon_facebook.png',

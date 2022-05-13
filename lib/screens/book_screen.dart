@@ -13,11 +13,13 @@ class BookPage extends StatelessWidget {
         gridDelegate:
             const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (context, index) {
-          Books books = booksList[index];
+          Books _books = booksList[index];
           return InkWell(
             onTap: (() {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => BooksDetails(books)));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => BooksDetails(_books)));
             }),
             child: Card(
               elevation: 30,
@@ -27,12 +29,12 @@ class BookPage extends StatelessWidget {
                     height: 5,
                   ),
                   Image.asset(
-                    books.image,
+                    _books.image,
                     height: 155,
                     fit: BoxFit.fitHeight,
                   ),
                   Text(
-                    books.price,
+                    _books.price,
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   )
                 ],
