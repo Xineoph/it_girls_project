@@ -2,6 +2,7 @@ import 'package:bookshop/helpers/colors.dart';
 import 'package:bookshop/screens/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 import 'book_screen.dart';
+import 'user_profile_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
