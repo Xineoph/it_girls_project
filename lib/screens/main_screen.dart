@@ -16,7 +16,7 @@ class _MainScreenState extends State<MainScreen> {
     const Text('Home Page'),
     const BookPage(),
     const WishListScreen(),
-    const Text('Profile'),
+    const MyApp(),
   ];
   final List<Widget> screensName = [
     const Text('Home Page'),
