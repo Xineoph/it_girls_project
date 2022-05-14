@@ -1,5 +1,6 @@
 import 'package:bookshop/screens/wishlist_screen.dart';
 import 'package:flutter/material.dart';
+import 'wishlist_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,6 +25,7 @@ class UserProfilePage extends StatelessWidget {
   final String _followers = "945K";
   final String following = "2,1K";
   final String _bio = "Favorite Genres";
+  final String _bio2 = "Purchased Books";
 
   Widget _buildProfileImage() {
     return Center(
@@ -67,7 +69,7 @@ class UserProfilePage extends StatelessWidget {
         style: TextStyle(
           fontFamily: 'Montserrat',
           color: Color(0xFF828282),
-          fontSize: 00.0,
+          fontSize: 10.0,
           fontWeight: FontWeight.w400,
         ),
       ),
@@ -305,11 +307,30 @@ class UserProfilePage extends StatelessWidget {
     );
   }
 
+  Widget _buildBio2(BuildContext context) {
+    TextStyle bioTextStyle = TextStyle(
+      fontFamily: 'Montserrat',
+      fontWeight: FontWeight.w700, //try changing weight to w500 if not thin
+      fontStyle: FontStyle.normal,
+      color: Color(0xFF333333),
+      fontSize: 16.0,
+    );
+    return Container(
+      color: Theme.of(context).scaffoldBackgroundColor,
+      alignment: Alignment.topLeft,
+      padding: EdgeInsets.all(8.0),
+      child: Text(
+        _bio2,
+        textAlign: TextAlign.center,
+        style: bioTextStyle,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(),
       body: Stack(
         children: <Widget>[
           SafeArea(
@@ -326,6 +347,8 @@ class UserProfilePage extends StatelessWidget {
                   _buildButtons(),
                   _buildButtons2(),
                   _buildButtons3(),
+                  SizedBox(height: 20.0),
+                  _buildBio2(context),
                 ],
               ),
             ),
