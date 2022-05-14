@@ -19,20 +19,12 @@ class CustomColors {
       CustomColors.yellowColor,
       CustomColors.softPinkColor,
     ],
-    begin: Alignment.topRight,
-    end: Alignment.centerLeft,
-    stops: [0.0, 0.8],
-    tileMode: TileMode.clamp,
   );
   static const gradientBlueBaby = LinearGradient(
     colors: [
       CustomColors.blueColor,
       CustomColors.babyColor,
     ],
-    begin: Alignment.topRight,
-    end: Alignment.centerLeft,
-    stops: [0.0, 0.8],
-    tileMode: TileMode.clamp,
   );
 
   static const double bottomPadding = 50;

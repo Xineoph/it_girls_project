@@ -14,6 +14,7 @@ class _MainScreenState extends State<MainScreen> {
   int selectedIndex = 0;
   final List<Widget> screens = [
     HomeScreen(),
+
     const BookPage(),
     const WishListScreen(),
     const Text('Profile'),
