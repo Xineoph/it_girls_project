@@ -1,8 +1,8 @@
 import 'package:bookshop/helpers/colors.dart';
+import 'package:bookshop/screens/book_screen.dart';
 import 'package:bookshop/screens/wishlist_screen.dart';
-import 'package:bookshop/widgets/popular_genres_list.dart';
+
 import 'package:flutter/material.dart';
-import 'book_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -13,7 +13,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int selectedIndex = 0;
   final List<Widget> screens = [
-    const GenresList(),
+    const Text('Home Page'),
     const BookPage(),
     const WishListScreen(),
     const Text('Profile'),

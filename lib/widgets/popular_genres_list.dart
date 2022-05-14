@@ -1,4 +1,5 @@
 import 'package:bookshop/helpers/colors.dart';
+import 'package:bookshop/models/books%20_model.dart';
 import 'package:bookshop/models/genres_model.dart';
 import 'package:flutter/material.dart';
 
