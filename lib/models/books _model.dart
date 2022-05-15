@@ -3,14 +3,14 @@ class Books {
   String description;
   String image;
   String price;
-  String autor;
+  String author;
   String genres;
   Books({
     required this.name,
     required this.description,
     required this.image,
     this.price = '',
-    this.autor = '',
+    this.author = '',
     required this.genres,
   });
 }
@@ -20,80 +20,80 @@ List<Books> booksList = [
       name: 'Conversations with Friends',
       description:
           'A blurb about the book goes here. A few sentences that are nice and easy to read. Like one that’s enticing... ',
-      image: 'assets/images/book_1.png',
+      image: 'assets/images/bookWish11.png',
       price: '€ 12.90',
-      autor: 'Sally Rooney',
+      author: 'Sally Rooney',
       genres: 'General Fiction'),
   Books(
       name: 'The world doesn’t require you',
       description:
           'A blurb about the book goes here. A few sentences that are nice and easy to read. Like one that’s enticing... ',
-      image: 'assets/images/book_2.png',
+      image: 'assets/images/bookWish1.png',
       price: '€ 12.90',
-      autor: 'Rion Amilcar Scott',
+      author: 'Rion Amilcar Scott',
       genres: 'Crime'),
   Books(
       name: 'Promising Young Women',
       description:
           'A blurb about the book goes here. A few sentences that are nice and easy to read. Like one that’s enticing... ',
-      image: 'assets/images/book_3.png',
+      image: 'assets/images/bookWish10.png',
       price: '€ 9.80',
-      autor: 'Caroline O’Donoghue',
+      author: 'Caroline O’Donoghue',
       genres: 'Thriller'),
   Books(
       name: 'Careers for Women',
       description:
           'A blurb about the book goes here. A few sentences that are nice and easy to read. Like one that’s enticing... ',
-      image: 'assets/images/book_4.png',
+      image: 'assets/images/bookWish9.png',
       price: '€ 10.50',
-      autor: 'Joanna Scott',
+      author: 'Joanna Scott',
       genres: 'Romance'),
   Books(
       name: 'Little Fires Everywhere',
       description:
           'A blurb about the book goes here. A few sentences that are nice and easy to read. Like one that’s enticing... ',
-      image: 'assets/images/book_5.png',
+      image: 'assets/images/bookWish7.png',
       price: '€ 12.90',
-      autor: 'Celeste Ng',
+      author: 'Celeste Ng',
       genres: 'Travel'),
   Books(
       name: 'All the Pretty Horses',
       description:
           'A blurb about the book goes here. A few sentences that are nice and easy to read. Like one that’s enticing... ',
-      image: 'assets/images/book_6.png',
+      image: 'assets/images/bookWish8.png',
       price: '€ 12.90',
-      autor: 'Cormac McCarthy',
+      author: 'Cormac McCarthy',
       genres: 'Science Fiction'),
   Books(
       name: 'Louis & Louise',
       description:
           'A blurb about the book goes here. A few sentences that are nice and easy to read. Like one that’s enticing... ',
-      image: 'assets/images/book_7.png',
+      image: 'assets/images/bookWish5.png',
       price: '€ 12.90',
-      autor: 'Julie Cohen',
+      author: 'Julie Cohen',
       genres: 'Classics'),
   Books(
       name: 'Furiously Happy',
       description:
           'A blurb about the book goes here. A few sentences that are nice and easy to read. Like one that’s enticing... ',
-      image: 'assets/images/book_8.png',
+      image: 'assets/images/bookWish2.png',
       price: '€ 12.90',
-      autor: 'Jenny Lawson',
+      author: 'Jenny Lawson',
       genres: 'Children’s Books'),
   Books(
       name: 'Bernadette',
       description:
           'A blurb about the book goes here. A few sentences that are nice and easy to read. Like one that’s enticing... ',
-      image: 'assets/images/book_9.png',
+      image: 'assets/images/bookWish4.png',
       price: '€ 12.90',
-      autor: 'Maria Semple',
+      author: 'Maria Semple',
       genres: 'Fantasy'),
   Books(
       name: 'Educated',
       description:
           'A blurb about the book goes here. A few sentences that are nice and easy to read. Like one that’s enticing... ',
-      image: 'assets/images/book_10.png',
+      image: 'assets/images/bookWish6.png',
       price: '€ 12.90',
-      autor: 'Tara Westover',
+      author: 'Tara Westover',
       genres: 'Classics'),
 ];
