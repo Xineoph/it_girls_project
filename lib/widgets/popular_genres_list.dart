@@ -1,5 +1,4 @@
 import 'package:bookshop/helpers/colors.dart';
-import 'package:bookshop/models/books%20_model.dart';
 import 'package:bookshop/models/genres_model.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +31,7 @@ class GenresList extends StatelessWidget {
   Widget _buildGridView() {
     return GridView.builder(
         shrinkWrap: true,
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(5),
         itemCount: genresList.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             mainAxisExtent: 120, crossAxisCount: 4),
@@ -40,13 +39,13 @@ class GenresList extends StatelessWidget {
           Genres genres = genresList[index];
           return InkWell(
             onTap: (() {
-              Navigator.of(context).pushNamed('/null');
+              Navigator.of(context).pushNamed('/genres_sort');
             }),
             child: Column(
               children: [
                 Card(
                   child: Padding(
-                    padding: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(22),
                     child: Image.asset(
                       genres.image,
                       height: 32,

@@ -7,7 +7,7 @@ import 'package:share/share.dart';
 class BooksDetails extends StatelessWidget {
   final Books _books;
 
-  BooksDetails(this._books, {Key? key}) : super(key: key);
+  const BooksDetails(this._books, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -278,7 +278,9 @@ class BooksDetails extends StatelessWidget {
           FloatingActionButton(
             backgroundColor: CustomColors.blueColor,
             heroTag: null,
-            onPressed: () {},
+            onPressed: () {
+              Share.share(_books.name);
+            },
             child: Image.asset(
               'assets/images/icon_instagram.png',
               color: Colors.white,
@@ -289,7 +291,9 @@ class BooksDetails extends StatelessWidget {
           FloatingActionButton(
             backgroundColor: CustomColors.blueColor,
             heroTag: null,
-            onPressed: () {},
+            onPressed: () {
+              Share.share(_books.name);
+            },
             child: Image.asset(
               'assets/images/icon_twitter.png',
               width: 30,
@@ -299,7 +303,9 @@ class BooksDetails extends StatelessWidget {
           FloatingActionButton(
             backgroundColor: CustomColors.blueColor,
             heroTag: null,
-            onPressed: () {},
+            onPressed: () {
+              Share.share(_books.name);
+            },
             child: Image.asset(
               'assets/images/icon_mail.png',
               width: 30,
@@ -309,7 +315,9 @@ class BooksDetails extends StatelessWidget {
           FloatingActionButton(
             backgroundColor: CustomColors.blueColor,
             heroTag: null,
-            onPressed: () {},
+            onPressed: () {
+              Share.share(_books.name);
+            },
             child: Image.asset(
               'assets/images/icon.png',
               width: 30,
