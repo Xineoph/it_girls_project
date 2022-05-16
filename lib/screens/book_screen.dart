@@ -4,22 +4,30 @@ import 'package:flutter/material.dart';
 
 class BookPage extends StatelessWidget {
   const BookPage({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return BookGridView(booksList);
+  }
+}
+
+class BookGridView extends StatelessWidget {
+  final List<Books> _books;
+
+  const BookGridView(this._books, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
         padding: const EdgeInsets.all(10),
-        itemCount: booksList.length,
+        itemCount: _books.length,
         gridDelegate:
             const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (context, index) {
-          Books _books = booksList[index];
+          Books books = _books[index];
           return InkWell(
             onTap: (() {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => BooksDetails(_books)));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => BooksDetails(books)));
             }),
             child: Card(
               elevation: 30,
@@ -29,12 +37,12 @@ class BookPage extends StatelessWidget {
                     height: 5,
                   ),
                   Image.asset(
-                    _books.image,
+                    books.image,
                     height: 155,
                     fit: BoxFit.fitHeight,
                   ),
                   Text(
-                    _books.price,
+                    books.price,
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   )
                 ],
