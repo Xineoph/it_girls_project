@@ -1,6 +1,7 @@
 import 'package:bookshop/screens/main_screen.dart';
 import 'package:bookshop/screens/null_screen.dart';
 import 'package:bookshop/screens/wishlist_screen.dart';
+import 'package:bookshop/screens/genres_screen.dart';
 import 'package:bookshop/widgets/popular_genres_list.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/genres': (context) => GenresList(),
         '/null': (context) => NullScreen(),
+        '/genresScreen': (context) => GenresScreen(),
         '/wishlist': (context) => WishListScreen(),
       },
       initialRoute: '/',

@@ -3,6 +3,8 @@ import 'package:bookshop/screens/wishlist_screen.dart';
 import 'package:bookshop/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bookshop/screens/book_screen.dart';
+import 'package:bookshop/screens/user_profile_screen.dart';
+
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -17,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
 
     const BookPage(),
     const WishListScreen(),
-    const Text('Profile'),
+    const WishListInProfile(),
   ];
   final List<Widget> screensName = [
     const Text('Home Page'),

@@ -1,62 +1,122 @@
+import 'package:bookshop/helpers/colors.dart';
 import 'package:bookshop/screens/wishlist_screen.dart';
 import 'package:flutter/material.dart';
+
+Map<String, LinearGradient> _genresMap = {
+  'African': CustomColors.gradientBlueBaby,
+  'Classics': CustomColors.gradientPinkBlush,
+  'Travel': CustomColors.gradientYellowPink,
+  'Science Fiction': CustomColors.gradientYellowPink,
+  'Romance': CustomColors.gradientBabyYellow,
+  'Fantasy': CustomColors.gradientBlushYellow,
+  'Children’s Books': CustomColors.gradientBlueBaby,
+};
 
 class WishListInProfile extends StatelessWidget {
   const WishListInProfile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-      ),
-      body: Column(
-        children: const <Widget>[
-          RowTitle(),
-          WishListComponent(),
-          InkWellWishScreen(),
-        ],
+    return SingleChildScrollView(
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(24, 40, 24, 40),
+        child: Column(
+          children: <Widget>[
+            _titleGenresTags(),
+            _buttonGenresTags(context),
+            _titleWishListComponent(),
+            const WishListComponent(),
+            const InkWellWishScreen(),
+          ],
+        ),
       ),
     );
   }
 }
 
-class RowTitle extends StatefulWidget {
-  const RowTitle({Key? key}) : super(key: key);
-
-  @override
-  State<RowTitle> createState() => _RowTitleState();
+Widget _titleGenresTags() {
+  return Container(
+    padding: const EdgeInsets.fromLTRB(5, 40, 20, 15),
+    child: const Align(
+      alignment: Alignment.centerLeft,
+      child: Text(
+        'Favorite Genres',
+        style: TextStyle(
+            fontSize: 16,
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.bold,
+            color: CustomColors.grey_2Color),
+      ),
+    ),
+  );
 }
 
-class _RowTitleState extends State<RowTitle> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        padding: const EdgeInsets.all(20),
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            const Text(
-              'Wishlist',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-                fontFamily: 'Montserrat',
-                color: Colors.black,
-              ),
-            ),
-            Text(
-              '   ${books.length}',
-              style: const TextStyle(
-                fontSize: 15,
-                color: Colors.black,
-              ),
-            ),
-          ],
-        ));
+Widget _buttonGenresTags(context) {
+  return Wrap(
+    children: _childrenButtonGenresTags(context),
+  );
+}
+
+List<Widget> _childrenButtonGenresTags(context) {
+  List<TextButton> _list = [];
+  for (var entry in _genresMap.entries) {
+    _list.add(_generalTextButton(context, entry.key, entry.value));
   }
+  return _list;
+}
+
+TextButton _generalTextButton(context, String genreValue, LinearGradient gradient) {
+  return TextButton(
+    onPressed: () {
+      Navigator.of(context).pushNamed(
+        '/genresScreen',
+        arguments: {'genre': genreValue},
+      );
+    },
+    child: Ink(
+      padding: const EdgeInsets.all(7),
+      width: genreValue.length * 9,
+      height: 30,
+      decoration: BoxDecoration(
+          gradient: gradient, borderRadius: BorderRadius.circular(10)),
+      child: Text(
+        genreValue,
+        textAlign: TextAlign.center,
+        style: const TextStyle(
+            fontSize: 12,
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.bold,
+            color: CustomColors.whiteColor),
+      ),
+    ),
+  );
+}
+
+Widget _titleWishListComponent() {
+  return Container(
+      padding: const EdgeInsets.fromLTRB(8, 40, 20, 20),
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          const Text(
+            'Wishlist',
+            style: TextStyle(
+                fontSize: 16,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.bold,
+                color: CustomColors.grey_2Color),
+          ),
+          Text(
+            '   ${books.length}',
+            style: const TextStyle(
+              fontSize: 15,
+              color: Colors.black,
+            ),
+          ),
+        ],
+      ));
 }
 
 class WishListComponent extends StatefulWidget {
@@ -111,7 +171,7 @@ class InkWellWishScreen extends StatelessWidget {
           decoration: const BoxDecoration(
               border: Border(
                   bottom: BorderSide(
-            color: Color(0xffd96f6e),
+            color: CustomColors.blushColor,
             width: 2.0,
           ))),
           child: const Text(
@@ -120,7 +180,7 @@ class InkWellWishScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
               fontSize: 14,
               fontFamily: 'Montserrat',
-              color: Color(0xffd96f6e),
+              color: CustomColors.blushColor,
             ),
           ),
         ),

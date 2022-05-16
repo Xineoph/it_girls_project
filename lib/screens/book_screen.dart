@@ -7,13 +7,24 @@ class BookPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return BookGridView(booksList);
+  }
+}
+
+class BookGridView extends StatelessWidget {
+  final List<Books> _books;
+
+  const BookGridView(this._books, {Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return GridView.builder(
         padding: const EdgeInsets.all(10),
-        itemCount: booksList.length,
+        itemCount: _books.length,
         gridDelegate:
             const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (context, index) {
-          Books books = booksList[index];
+          Books books = _books[index];
           return InkWell(
             onTap: (() {
               Navigator.push(context,
@@ -28,7 +39,7 @@ class BookPage extends StatelessWidget {
                   ),
                   Image.asset(
                     books.image,
-                    height: 155,
+                    height: 149,
                     fit: BoxFit.fitHeight,
                   ),
                   Text(
