@@ -4,6 +4,16 @@ import 'package:flutter/material.dart';
 
 class BookPage extends StatelessWidget {
   const BookPage({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return BookGridView(booksList);
+  }
+}
+
+class BookGridView extends StatelessWidget {
+  final List<Books> _books;
+
+  const BookGridView(this._books, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
