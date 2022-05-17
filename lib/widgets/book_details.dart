@@ -83,9 +83,7 @@ class BooksDetails extends StatelessWidget {
 
   Widget _buildBookAutor() {
     return Text(
-
       _books.author,
-
       style: const TextStyle(
         fontSize: 16,
         fontFamily: 'Montserrat',
@@ -223,7 +221,10 @@ class BooksDetails extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              Navigator.of(context).pushNamed('/null');
+              Navigator.of(context).pushNamed(
+                '/genresScreen',
+                arguments: {'genre': _books.genres},
+              );
             },
             child: Ink(
               padding: const EdgeInsets.all(7),

@@ -41,7 +41,7 @@ class GenresList extends StatelessWidget {
           return InkWell(
             onTap: (() {
               Navigator.of(context).pushNamed(
-                '/genres_sort',
+                '/genresScreen',
                 arguments: {'genre': genres.name},
               );
             }),

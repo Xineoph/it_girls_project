@@ -1,7 +1,8 @@
 import 'package:bookshop/screens/book_screen.dart';
-import 'package:bookshop/screens/genres_sort_screen.dart';
 import 'package:bookshop/screens/main_screen.dart';
 import 'package:bookshop/screens/null_screen.dart';
+import 'package:bookshop/screens/user_profile_screen.dart';
+import 'package:bookshop/screens/user_screen.dart';
 import 'package:bookshop/screens/wishlist_screen.dart';
 import 'package:bookshop/screens/genres_screen.dart';
 import 'package:bookshop/widgets/popular_genres_list.dart';
@@ -26,8 +27,8 @@ class MyApp extends StatelessWidget {
         '/null': (context) => const NullScreen(),
         '/wishlist': (context) => const WishListScreen(),
         '/book_screen': (context) => const BookPage(),
-        '/genres_sort': (context) => const GenresSortScreen(),
-
+        '/genresScreen': (context) => const GenresScreen(),
+        '/profile': (context) => const UserProfilePage(),
       },
       initialRoute: '/',
     );

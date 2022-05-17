@@ -2,8 +2,9 @@
 class Assets {
   Assets._();
 
-  static const String fontsMontserrat-Regular = 'assets/fonts/Montserrat-Regular.ttf';
-  static const String fontsPlayfairDisplay-Bold = 'assets/fonts/PlayfairDisplay-Bold.ttf';
+  static const String fontsMontserrat = 'assets/fonts/Montserrat-Regular.ttf';
+  static const String fontsPlayfairDisplay =
+      'assets/fonts/PlayfairDisplay-Bold.ttf';
   static const String imagesBook1 = 'assets/images/book_1.png';
   static const String imagesBook10 = 'assets/images/book_10.png';
   static const String imagesBook2 = 'assets/images/book_2.png';
@@ -30,5 +31,4 @@ class Assets {
   static const String imagesIconInstagram = 'assets/images/icon_instagram.png';
   static const String imagesIconMail = 'assets/images/icon_mail.png';
   static const String imagesIconTwitter = 'assets/images/icon_twitter.png';
-
 }
