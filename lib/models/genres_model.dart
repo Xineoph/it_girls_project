@@ -58,3 +58,11 @@ List<Genres> genresList = [
     image: 'assets/images/gen_nature.png',
   ),
 ];
+/*
+Set<TextButton> findUniqueGenre() {
+  return genresList
+      .map((e) => e.name)
+  .map((e) => TextButton(onPressed: onPressed, child: child))
+      .toSet();
+}
+*/

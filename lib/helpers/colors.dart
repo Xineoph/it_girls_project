@@ -14,6 +14,8 @@ class CustomColors {
 
   static const Color babyColor = Color(0xFFBBD1D9);
 
+  static const Color pinkColor = Color(0xFFF3A492);
+
   static const gradientYellowPink = LinearGradient(
     colors: [
       CustomColors.yellowColor,
@@ -24,6 +26,24 @@ class CustomColors {
     colors: [
       CustomColors.blueColor,
       CustomColors.babyColor,
+    ],
+  );
+  static const gradientPinkBlush = LinearGradient(
+    colors: [
+      CustomColors.pinkColor,
+      CustomColors.blushColor,
+    ],
+  );
+  static const gradientBabyYellow = LinearGradient(
+    colors: [
+      CustomColors.babyColor,
+      CustomColors.yellowColor,
+    ],
+  );
+  static const gradientBlushYellow = LinearGradient(
+    colors: [
+      CustomColors.blushColor,
+      CustomColors.yellowColor,
     ],
   );
 

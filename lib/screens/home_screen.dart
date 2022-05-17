@@ -22,8 +22,8 @@ class HomeScreen extends StatelessWidget {
             _buildSpacer(30),
             const _LatestArrivalsLists(),
             _buildSpacer(30),
-            //const _PopularGenresLists(),
-            const GenresList(),
+
+            const _PopularGenresLists(),
           ],
         ),
       ),
@@ -34,6 +34,7 @@ class HomeScreen extends StatelessWidget {
 String _lastVisitDays = '16 days';
 
 class _WelcomeText extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -133,7 +134,7 @@ class _TopAuthorsLists extends StatelessWidget {
   }
 
   List<Container> _convertAuthorList() {
-    List<Author> doubleList = [];
+
     doubleList.addAll(authorList);
     doubleList.addAll(authorList);
 
@@ -253,6 +254,28 @@ class _LatestArrivalsLists extends StatelessWidget {
 //     );
 //   }
 // }
+
+
+class _PopularGenresLists extends StatelessWidget {
+  const _PopularGenresLists({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: const [
+        Text(
+          'TODO: Popular Genres',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+            fontFamily: 'PlayfairDisplay',
+          ),
+        ),
+      ],
+    );
+  }
+}
+
 
 Widget _buildSpacer(double space) {
   return SizedBox(

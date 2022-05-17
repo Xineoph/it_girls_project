@@ -17,6 +17,17 @@ class BookGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return BookGridView(booksList);
+  }
+}
+
+class BookGridView extends StatelessWidget {
+  final List<Books> _books;
+
+  const BookGridView(this._books, {Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return GridView.builder(
         padding: const EdgeInsets.all(10),
         itemCount: _books.length,
@@ -38,7 +49,7 @@ class BookGridView extends StatelessWidget {
                   ),
                   Image.asset(
                     books.image,
-                    height: 155,
+                    height: 149,
                     fit: BoxFit.fitHeight,
                   ),
                   Text(

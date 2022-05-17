@@ -97,6 +97,10 @@ List<Books> booksList = [
       author: 'Tara Westover',
       genres: 'Classics'),
 ];
-List<Books> findBookByGenre(String genre) {
-  return booksList.where((book) => book.genres == genre).toList();
+
+
+List<Books> findBookByGenre (String genre) {
+  return booksList
+      .where((book) => book.genres == genre)
+      .toList();
 }
