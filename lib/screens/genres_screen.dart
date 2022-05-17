@@ -7,14 +7,14 @@ class GenresScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final arguments = (ModalRoute
-        .of(context)
-        ?.settings
-        .arguments ?? <String, dynamic>{}) as Map;
+    final arguments = (ModalRoute.of(context)?.settings.arguments ??
+        <String, dynamic>{}) as Map;
     String genre = arguments['genre'];
     List<Books> booksByGenres = findBookByGenre(genre);
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(genre),
+      ),
       body: Center(
         child: TextButton(
           onPressed: () {
