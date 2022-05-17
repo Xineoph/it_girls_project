@@ -2,6 +2,7 @@ import 'package:bookshop/helpers/colors.dart';
 import 'package:bookshop/screens/wishlist_screen.dart';
 import 'package:bookshop/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+
 import 'package:bookshop/screens/book_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -17,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
 
     const BookPage(),
     const WishListScreen(),
-    const Text('Profile'),
+    const MyApp(),
   ];
   final List<Widget> screensName = [
     const Text('Home Page'),
